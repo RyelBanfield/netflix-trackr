@@ -1,0 +1,47 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Shows</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_show_path, class: 'btn btn-primary' do %>
+    Add New Show
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            <th>Comment</th>
+            <th>Rating</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @shows.each do |show| %>
+        <%= content_tag :tr, id: dom_id(show), class: dom_class(show) do %>
+          
+
+                      <td><%= show.title %></td>
+                      <td><%= show.comment %></td>
+                      <td><%= show.rating %></td>
+          
+          
+            <td><%= link_to 'Show', show %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
