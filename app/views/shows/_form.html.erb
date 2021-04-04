@@ -1,0 +1,44 @@
+<%= form_with(model: show, local: true) do |form| %>
+  <% if show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(show.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+      <% show.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if show.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', show, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if show.persisted? %>
+      <%= link_to "Cancel", show, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", shows_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
