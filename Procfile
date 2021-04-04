@@ -1,2 +1,1 @@
-web: rails server
-worker: sidekiq
+web: bundle exec rails server -p $PORT
