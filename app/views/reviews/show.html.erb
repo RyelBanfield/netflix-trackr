@@ -1,0 +1,22 @@
+<div class="page-header">
+  <%= link_to reviews_path, class: 'btn' do %>
+    All Reviews
+  <% end %>
+  <% if @review.user = current_user%>
+  <%= link_to edit_review_path(@review), class: 'btn' do %>
+    Edit
+  <% end %>
+  <%= link_to review_path(@review), :method => :delete, data: { confirm: 'Are you sure?' }, class: 'btn' do %>
+    Delete
+  <% end %>
+  <% end %>
+  <h1 class="mt-3">Your review of <%= @review.title %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Rating:</dt>
+  <dd><%= @review.rating %></dd>
+
+  <dt>Comment:</dt>
+  <dd><%= @review.comment %></dd>
+</dl>
