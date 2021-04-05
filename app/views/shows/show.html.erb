@@ -10,17 +10,13 @@
     Delete
   <% end %>
   <% end %>
-  <h1 class='text-white'>Show details</h1>
+  <h1 class="mt-3">Your review of <%= @show.title %></h1>
 </div>
 
-<dl class="dl-horizontal text-white">
-  <dt>Title:</dt>
-  <dd><%= @show.title %></dd>
-
-  <dt>Comment:</dt>
-  <dd><%= @show.comment %></dd>
-
+<dl class="dl-horizontal">
   <dt>Rating:</dt>
   <dd><%= @show.rating %></dd>
 
+  <dt>Comment:</dt>
+  <dd><%= @show.comment %></dd>
 </dl>

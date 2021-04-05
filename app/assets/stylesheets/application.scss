@@ -22,19 +22,34 @@ body > .alert {
 }
 
 body {
-  background-color: black;
   min-height: 100vh;
   margin-bottom: 0;
+}
+
+nav, footer {
+  background-color: black;
 }
 
 .navbar-brand {
   color: #E50914!important;
 }
 
+.navbar-toggler-icon {
+  background-color: white!important;
+}
+
+.nav-link {
+  color: white!important;
+}
+
 .btn {
   background-color: #E50914;
 }
 
-.show:hover, .show-link {
+.show-link {
+  color: #E50914!important;
+}
+
+footer .container ul li a {
   color: #E50914!important;
 }
