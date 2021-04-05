@@ -20,3 +20,21 @@
 body > .alert {
   margin-bottom: 0;
 }
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  color: #E50914!important;
+}
+
+.btn {
+  background-color: #E50914;
+}
+
+.show:hover, .show-link {
+  color: #E50914!important;
+}
