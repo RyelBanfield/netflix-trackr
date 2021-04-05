@@ -7,7 +7,7 @@
   </div>
 
   <div class="col-sm-6 text-right">
-  <%= link_to new_show_path, class: 'btn' do %>
+  <%= link_to new_review_path, class: 'btn' do %>
     Add New Review
   <% end %>
   </div>
@@ -26,13 +26,13 @@
     </thead>
 
     <tbody>
-      <% @shows.each do |show| %>
-        <% if show.user == current_user %>
-          <%= content_tag :tr, id: dom_id(show), class: dom_class(show) do %>
+      <% @reviews.each do |review| %>
+        <% if review.user == current_user %>
+          <%= content_tag :tr, id: dom_id(review), class: dom_class(review) do %>
 
-            <td><%= link_to show.title.capitalize, show, class: "show-link" %></td>
-            <td><%= show.rating %></td>
-            <td><%= show.comment.capitalize %></td>
+            <td><%= link_to review.title.capitalize, review, class: "review-link" %></td>
+            <td><%= review.rating %></td>
+            <td><%= review.comment.capitalize %></td>
             
           <% end %>
         <% end%>

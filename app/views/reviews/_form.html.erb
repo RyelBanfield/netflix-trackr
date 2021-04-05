@@ -1,10 +1,10 @@
-<%= form_with(model: show, local: true) do |form| %>
-  <% if show.errors.any? %>
+<%= form_with(model: review, local: true) do |form| %>
+  <% if review.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(show.errors.count, "error") %> prohibited this show from being saved:</h2>
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
-      <% show.errors.full_messages.each do |message| %>
+      <% review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -28,18 +28,18 @@
 
 
   <div class="form-group">
-    <% if show.persisted? %>
+    <% if review.persisted? %>
       <div class="float-right">
-        <%= link_to 'Destroy', show, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', review, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
 
     <%= form.submit class: 'btn' %>
 
-    <% if show.persisted? %>
-      <%= link_to "Cancel", show, class: "btn" %>
+    <% if review.persisted? %>
+      <%= link_to "Cancel", review, class: "btn" %>
     <% else %>
-      <%= link_to "Cancel", shows_path, class: "btn" %>
+      <%= link_to "Cancel", reviews_path, class: "btn" %>
     <% end %>
   </div>
 <% end %>
