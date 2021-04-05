@@ -1,14 +1,19 @@
 <div class="page-header">
-  <%= link_to shows_path, class: 'btn btn-default' do %>
+  <%= link_to shows_path, class: 'btn' do %>
     All Shows
   <% end %>
-  <%= link_to edit_show_path(@show), class: 'btn btn-primary' do %>
+  <% if @show.user = current_user%>
+  <%= link_to edit_show_path(@show), class: 'btn' do %>
     Edit
   <% end %>
-  <h1>Show details</h1>
+  <%= link_to show_path(@show), :method => :delete, data: { confirm: 'Are you sure?' }, class: 'btn' do %>
+    Delete
+  <% end %>
+  <% end %>
+  <h1 class='text-white'>Show details</h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl class="dl-horizontal text-white">
   <dt>Title:</dt>
   <dd><%= @show.title %></dd>
 
