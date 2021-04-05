@@ -2,8 +2,8 @@
 
 
 <div class="row">
-  <div class="col-sm-6 text-white">
-    <h1>Show Reviews</h1>
+  <div class="col-sm-6">
+    <h1>Your Reviews</h1>
   </div>
 
   <div class="col-sm-6 text-right">
@@ -13,34 +13,29 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover text-white">
+<div class="table-responsive mt-3 mt-md-0">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
-    
 
-            <th>Title</th>
-            <th>Comment</th>
-            <th>Rating (1 - 10)</th>
-            <th>User</th>
-            <th></th>
+        <th>Title</th>
+        <th>Comment</th>
+        <th>Rating</th>
         
       </tr>
     </thead>
 
     <tbody>
       <% @shows.each do |show| %>
-        <%= content_tag :tr, id: dom_id(show), class: dom_class(show) do %>
-          
+        <% if show.user == current_user %>
+          <%= content_tag :tr, id: dom_id(show), class: dom_class(show) do %>
 
-                      <td><%= show.title %></td>
-                      <td><%= show.comment %></td>
-                      <td><%= show.rating %></td>
-                      <td><%= show.user.first_name %></td>
-          
-            <td><%= link_to 'Show', show , class: "show-link"%></td>
-          
-        <% end %>
+            <td><%= link_to show.title.capitalize, show, class: "show-link" %></td>
+            <td><%= show.rating %></td>
+            <td><%= show.comment.capitalize %></td>
+            
+          <% end %>
+        <% end%>
       <% end %>
     </tbody>
   </table>
