@@ -10,7 +10,7 @@
     Delete
   <% end %>
   <% end %>
-  <h1 class="mt-3">Your review of <%= @review.title %></h1>
+  <h1 class="mt-3">Review of <%= @review.title %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -19,4 +19,7 @@
 
   <dt>Comment:</dt>
   <dd><%= @review.comment %></dd>
+
+  <dt>Posted by:</dt>
+  <dd><%= @review.user.first_name.capitalize %>
 </dl>
