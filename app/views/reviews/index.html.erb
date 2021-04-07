@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <h1>Your Reviews</h1>
+    <h1>All Reviews</h1>
   </div>
 
   <div class="col-sm-6 text-right">
@@ -27,15 +27,13 @@
 
     <tbody>
       <% @reviews.each do |review| %>
-        <% if review.user == current_user %>
-          <%= content_tag :tr, id: dom_id(review), class: dom_class(review) do %>
 
-            <td><%= link_to review.title.capitalize, review, class: "review-link" %></td>
-            <td><%= review.rating %></td>
-            <td><%= review.comment.capitalize %></td>
-            
-          <% end %>
-        <% end%>
+        <%= content_tag :tr, id: dom_id(review), class: dom_class(review) do %>
+          <td><%= link_to review.title.capitalize, review, class: "review-link" %></td>
+          <td><%= review.rating %></td>
+          <td><%= review.comment.capitalize %></td>
+        <% end %>
+
       <% end %>
     </tbody>
   </table>
