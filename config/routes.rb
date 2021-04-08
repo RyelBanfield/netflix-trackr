@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'users/index'
   resources :reviews
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
@@ -27,6 +28,7 @@ end
 
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
+  resources :reviewers, only: [:index, :show]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
