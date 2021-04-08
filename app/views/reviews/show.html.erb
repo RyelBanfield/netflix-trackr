@@ -2,14 +2,11 @@
   <%= link_to reviews_path, class: 'btn' do %>
     All Reviews
   <% end %>
-  <% if @review.user = current_user %>
-  <%= link_to edit_review_path(@review), class: 'btn' do %>
-    Edit
-  <% end %>
-  <%= link_to review_path(@review), :method => :delete, data: { confirm: 'Are you sure?' }, class: 'btn' do %>
-    Delete
-  <% end %>
-  <% end %>
+    
+  <%= user_edit_review(@review) %>
+  <%= user_delete_review(@review) %>
+
+
   <h1 class="mt-3">Review of <%= @review.title %></h1>
 </div>
 
@@ -21,5 +18,5 @@
   <dd><%= @review.comment %></dd>
 
   <dt>Posted by:</dt>
-  <dd><%= @user.first_name.capitalize %>
+  <dd><%= @review.user.first_name.capitalize %>
 </dl>

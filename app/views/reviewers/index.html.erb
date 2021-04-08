@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-6">
-    <h1>All Reviews</h1>
+    <h1>All Users</h1>
   </div>
 
   <div class="col-sm-6 text-right">
@@ -15,20 +15,18 @@
     <thead>
       <tr>
 
-        <th>Title</th>
-        <th>Rating</th>
-        <th>Comment</th>
+        <th>User</th>
+        <th>Most Recent Review</th>
         
       </tr>
     </thead>
 
     <tbody>
-      <% @reviews.each do |review| %>
+      <% @users.each do |user| %>
 
-        <%= content_tag :tr, id: dom_id(review), class: dom_class(review) do %>
-          <td><%= link_to review.title.capitalize, review, class: "link" %></td>
-          <td><%= review.rating %></td>
-          <td><%= review.comment.capitalize %></td>
+        <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
+          <td><%= user.first_name.capitalize %></td>
+          <td><%= user.reviews.last.title %></td>
         <% end %>
 
       <% end %>

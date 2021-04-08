@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
-      if @review.update(show_params)
+      if @review.update(review_params)
         format.html { redirect_to @review, notice: "Review was successfully updated." }
         format.json { render :review, status: :ok, location: @review }
       else
