@@ -2,7 +2,7 @@
   <%= link_to reviews_path, class: 'btn' do %>
     All Reviews
   <% end %>
-  <% if @review.user = current_user%>
+  <% if @review.user = current_user %>
   <%= link_to edit_review_path(@review), class: 'btn' do %>
     Edit
   <% end %>
@@ -21,5 +21,5 @@
   <dd><%= @review.comment %></dd>
 
   <dt>Posted by:</dt>
-  <dd><%= @review.user.first_name.capitalize %>
+  <dd><%= @user.first_name.capitalize %>
 </dl>
