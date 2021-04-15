@@ -5,5 +5,6 @@ class ReviewersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @reviews = @user.reviews
   end
 end
