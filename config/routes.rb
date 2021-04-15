@@ -25,8 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/reviewer/:id' => 'reviewers#show'
   resources :reviews
-  resources :reviewers, only: [:index, :show]
+  resources :reviewers
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
