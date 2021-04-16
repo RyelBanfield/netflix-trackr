@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h1>All Reviews By <%= @user.first_name.capitalize %></h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_review_path, class: 'btn' do %>
+    Add New Review
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive mt-3 mt-md-0">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+
+        <th>Title</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reviews.each do |review| %>
+
+        <%= content_tag :tr, id: dom_id(review), class: dom_class(review) do %>
+          <td><%= link_to review.title.capitalize, review, class: "link" %></td>
+          <td><%= review.rating %></td>
+          <td><%= review.comment.capitalize %></td>
+        <% end %>
+
+      <% end %>
+    </tbody>
+  </table>
+</div>

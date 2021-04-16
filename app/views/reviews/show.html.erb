@@ -18,5 +18,5 @@
   <dd><%= @review.comment %></dd>
 
   <dt>Posted by:</dt>
-  <dd><%= @review.user.first_name.capitalize %>
+  <dd><%= link_to @review.user.first_name.capitalize, reviewer_path, class: "link" %>
 </dl>

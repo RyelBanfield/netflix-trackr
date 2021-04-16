@@ -25,8 +25,8 @@
       <% @users.each do |user| %>
 
         <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
-          <td><%= user.first_name.capitalize %></td>
-          <td><%= user.reviews.last.title %></td>
+          <td><%= link_to user.first_name.capitalize, "/reviewer/#{user.id}", class: 'link' %></td>
+          <td><%= checkForReviews(user)%></td>
         <% end %>
 
       <% end %>
