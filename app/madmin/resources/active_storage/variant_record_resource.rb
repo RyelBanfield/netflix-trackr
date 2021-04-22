@@ -1,9 +1,13 @@
-class ActiveStorage::VariantRecordResource < Madmin::Resource
-  # Attributes
-  attribute :id, form: false
-  attribute :variation_digest
-  attribute :image, index: false
+# frozen_string_literal: true
 
-  # Associations
-  attribute :blob
+module ActiveStorage
+  class VariantRecordResource < Madmin::Resource
+    # Attributes
+    attribute :id, form: false
+    attribute :variation_digest
+    attribute :image, index: false
+
+    # Associations
+    attribute :blob
+  end
 end

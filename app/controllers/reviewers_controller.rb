@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class ReviewersController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
-    @users = User.order("updated_at DESC" )
+    @users = User.order('updated_at DESC')
   end
 
   def show
