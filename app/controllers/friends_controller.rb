@@ -22,4 +22,13 @@ class FriendsController < ApplicationController
     end
     redirect_to '/friends'
   end
+
+  def destroy
+    @requesting_user = current_user
+    @receiving_user = User.find_by(id: params[:friend])
+    if @requesting_user.friends_with?(@receiving_user)
+      @requesting_user.remove_friend(@receiving_user)
+    end
+    redirect_to '/friends'
+  end
 end

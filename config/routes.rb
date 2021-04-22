@@ -33,7 +33,8 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/friends/new', to: 'friends#create'
+  post '/friends/new' => 'friends#create'
+  delete '/friends/:id' => 'friends#destroy'
 
   get '/reviewer/:id' => 'reviewers#show'
   resources :reviews
