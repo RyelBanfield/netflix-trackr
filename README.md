@@ -1,24 +1,39 @@
-# README
+# Netflix-Trackr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[LIVE LINK](https://netflix-trackr.herokuapp.com/)
 
-Things you may want to cover:
+> A web app to keep track of shows you look at and share your reviews with friends.
 
-* Ruby version
+Additional description about the project and its features.
 
-* System dependencies
+## Built With
 
-* Configuration
+- [Ruby on Rails](https://rubyonrails.org/)
 
-* Database creation
+## Author
 
-* Database initialization
+👤 **Ryel Banfield**
 
-* How to run the test suite
+- GitHub: [@RyelBanfield](https://github.com/ryelbanfield)
+- Twitter: [@RyelBanfield](https://twitter.com/ryelbanfield)
+- LinkedIn: [Ryel Banfield](https://www.linkedin.com/in/ryel-banfield/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🤝 Contributing
 
-* Deployment instructions
+Contributions, issues, and feature requests are welcome!
 
-* ...
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
