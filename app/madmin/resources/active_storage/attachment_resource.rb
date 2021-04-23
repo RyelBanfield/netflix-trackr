@@ -1,10 +1,14 @@
-class ActiveStorage::AttachmentResource < Madmin::Resource
-  # Attributes
-  attribute :id, form: false
-  attribute :name
-  attribute :created_at, form: false
+# frozen_string_literal: true
 
-  # Associations
-  attribute :record
-  attribute :blob
+module ActiveStorage
+  class AttachmentResource < Madmin::Resource
+    # Attributes
+    attribute :id, form: false
+    attribute :name
+    attribute :created_at, form: false
+
+    # Associations
+    attribute :record
+    attribute :blob
+  end
 end

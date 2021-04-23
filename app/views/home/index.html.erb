@@ -1,14 +1,22 @@
 <h1>Welcome to Netflix-Trackr!</h1>
 <h3>Use this web app to keep track of shows you look at and share your reviews with friends.</h3>
 
-<div class="text-left mt-4">
-  <%= link_to reviews_path, class: 'btn' do %>
-    View Show Reviews
-  <% end %>
-</div>
+<div>
+  <div class="text-left mt-4">
+    <%= link_to reviews_path, class: 'btn' do %>
+      Show All Reviews
+    <% end %>
+  </div>
 
-<div class="text-left mt-4">
-  <%= link_to reviewers_path, class: 'btn' do %>
-    View All Reviewers
-  <% end %>
+  <div class="text-left mt-4">
+    <%= link_to reviewers_path, class: 'btn' do %>
+      Most Recent Reviews
+    <% end %>
+  </div>
+
+  <div class="text-left mt-4">
+    <%= link_to friends_path, class: 'btn' do %>
+      Follow/Unfollow Users
+    <% end %>
+  </div>
 </div>

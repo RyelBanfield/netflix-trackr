@@ -1,7 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
+
+gem 'faker'
+
+gem 'has_friendship', github: 'sungwoncho/has_friendship'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
@@ -30,7 +36,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -38,8 +44,8 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
@@ -53,7 +59,6 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
@@ -65,12 +70,13 @@ gem 'madmin'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'name_of_person', '~> 1.1'
 gem 'noticed', '~> 1.2'
-gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook', '~> 6.0'
 gem 'omniauth-github', '~> 1.4'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'pundit', '~> 2.1'
 gem 'redis', '~> 4.2', '>= 4.2.2'
 gem 'sidekiq', '~> 6.1'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'whenever', require: false
