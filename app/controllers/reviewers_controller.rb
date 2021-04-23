@@ -9,6 +9,6 @@ class ReviewersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @reviews = @user.reviews
+    @reviews = @user.reviews.order('rating DESC, created_at DESC')
   end
 end
