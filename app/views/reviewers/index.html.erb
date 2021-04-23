@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-6">
-    <h1>All Users</h1>
+    <h1>Most Recent Reviews</h1>
   </div>
 
   <div class="col-sm-6 text-right">
@@ -23,12 +23,12 @@
 
     <tbody>
       <% @users.each do |user| %>
-
-        <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
-          <td><%= link_to user.first_name.capitalize, "/reviewer/#{user.id}", class: 'link' %></td>
-          <td><%= checkForReviews(user)%></td>
+        <% if user.reviews.to_a.length >= 1 %>
+          <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
+            <td><%= link_to user.first_name.capitalize, "/reviewer/#{user.id}", class: 'link' %></td>
+            <td><%= checkForReviews(user)%></td>
+          <% end %>
         <% end %>
-
       <% end %>
     </tbody>
   </table>
