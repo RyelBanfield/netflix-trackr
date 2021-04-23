@@ -16,19 +16,11 @@ class User < ApplicationRecord
 
   has_friendship
 
-  def on_friendship_created(friendship)
+  def on_friendship_created(friendship); end
 
-  end
-  
-  def on_friendship_accepted(friendship)
-      
-  end
-  
-  def on_friendship_blocked(friendship)
+  def on_friendship_accepted(friendship); end
 
-  end
-  
-  def on_friendship_destroyed(friendship)
+  def on_friendship_blocked(friendship); end
 
-  end
+  def on_friendship_destroyed(friendship); end
 end

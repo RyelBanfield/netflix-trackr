@@ -8,8 +8,7 @@ class FriendsController < ApplicationController
     @friends = current_user.friends
   end
 
-  def show
-  end
+  def show; end
 
   def new; end
 
@@ -26,9 +25,7 @@ class FriendsController < ApplicationController
   def destroy
     @requesting_user = current_user
     @receiving_user = User.find_by(id: params[:friend])
-    if @requesting_user.friends_with?(@receiving_user)
-      @requesting_user.remove_friend(@receiving_user)
-    end
+    @requesting_user.remove_friend(@receiving_user) if @requesting_user.friends_with?(@receiving_user)
     redirect_to '/friends'
   end
 end
