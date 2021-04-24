@@ -22,7 +22,7 @@
     </thead>
 
     <tbody>
-      <% @users.each do |user| %>
+      <% @users.includes(:reviews).each do |user| %>
         <% if user.reviews.to_a.length >= 1 %>
           <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
             <td><%= link_to user.first_name.capitalize, "/reviewer/#{user.id}", class: 'link' %></td>
