@@ -59,7 +59,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'bootstrap', '~> 4.5'
+gem 'bootstrap', '~> 5.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
 gem 'devise_masquerade', '~> 1.2'
