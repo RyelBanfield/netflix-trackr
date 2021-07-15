@@ -4,6 +4,8 @@
 
 > A web app to keep track of shows you look at and share your reviews with friends.
 
+![screenshot](./Screenshot.png)
+
 Additional description about the project and its features.
 
 ## Built With
